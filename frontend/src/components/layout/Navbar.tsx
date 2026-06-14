@@ -88,7 +88,7 @@ export const Navbar: React.FC = () => {
                 href="/login"
                 className="bg-[var(--secondary-color)] text-slate-900 hover:bg-yellow-500 font-bold px-3 py-1 rounded transition-colors text-[11px]"
               >
-                Portal Login
+                Sign In (ERP)
               </Link>
             )}
           </div>
@@ -187,6 +187,16 @@ export const Navbar: React.FC = () => {
             <Link href="/contact" className="nav-link font-semibold text-slate-700 dark:text-slate-200 hover:text-[var(--primary-color)] dark:hover:text-white text-sm">
               Contact Us
             </Link>
+
+            {user ? (
+              <Link href={`/dashboard/${user.role}`} className="bg-[var(--secondary-color)] text-slate-900 hover:bg-yellow-500 font-bold px-4 py-2 rounded text-xs transition-colors">
+                Dashboard
+              </Link>
+            ) : (
+              <Link href="/login" className="bg-[var(--primary-color)] hover:bg-blue-850 text-white font-bold px-4 py-2 rounded text-xs transition-colors">
+                Sign In / Portal Login
+              </Link>
+            )}
 
             {/* Theme Toggle */}
             <button
@@ -291,6 +301,24 @@ export const Navbar: React.FC = () => {
             >
               Contact Us
             </Link>
+
+            {user ? (
+              <Link
+                href={`/dashboard/${user.role}`}
+                onClick={closeMenus}
+                className="bg-[var(--secondary-color)] text-slate-900 font-bold px-4 py-2.5 rounded text-xs text-center transition-colors mt-2"
+              >
+                Dashboard
+              </Link>
+            ) : (
+              <Link
+                href="/login"
+                onClick={closeMenus}
+                className="bg-[var(--primary-color)] hover:bg-blue-850 text-white font-bold px-4 py-2.5 rounded text-xs text-center transition-colors mt-2"
+              >
+                Sign In / Portal Login
+              </Link>
+            )}
           </div>
         )}
       </nav>

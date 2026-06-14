@@ -19,6 +19,7 @@ import {
   MapPin,
   Mail,
   Phone,
+  Lock,
 } from 'lucide-react';
 
 interface Announcement {
@@ -205,9 +206,9 @@ export default function Home() {
 
       {/* Overview Cards (Quick stats) */}
       <section className="bg-slate-100 dark:bg-slate-900 py-10 transition-colors border-b border-slate-200 dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-white dark:bg-slate-950 p-6 rounded-lg shadow-sm flex items-center gap-4 transition-transform hover:-translate-y-1 border border-slate-200 dark:border-slate-800">
-            <div className="p-4 bg-blue-100 dark:bg-blue-900/30 text-primary rounded-full">
+            <div className="p-4 bg-blue-100 dark:bg-blue-900/30 text-primary rounded-full shrink-0">
               <GraduationCap size={28} />
             </div>
             <div>
@@ -216,7 +217,7 @@ export default function Home() {
             </div>
           </div>
           <div className="bg-white dark:bg-slate-950 p-6 rounded-lg shadow-sm flex items-center gap-4 transition-transform hover:-translate-y-1 border border-slate-200 dark:border-slate-800">
-            <div className="p-4 bg-amber-100 dark:bg-amber-900/30 text-amber-600 rounded-full">
+            <div className="p-4 bg-amber-100 dark:bg-amber-900/30 text-amber-600 rounded-full shrink-0">
               <Award size={28} />
             </div>
             <div>
@@ -225,12 +226,24 @@ export default function Home() {
             </div>
           </div>
           <div className="bg-white dark:bg-slate-950 p-6 rounded-lg shadow-sm flex items-center gap-4 transition-transform hover:-translate-y-1 border border-slate-200 dark:border-slate-800">
-            <div className="p-4 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-full">
+            <div className="p-4 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-full shrink-0">
               <Shield size={28} />
             </div>
             <div>
               <h3 className="font-extrabold text-sm text-slate-800 dark:text-white">Secure Environment</h3>
               <p className="text-xs text-slate-500 mt-1">24/7 campus surveillance, strict attendance, and caring staff.</p>
+            </div>
+          </div>
+          <div className="bg-white dark:bg-slate-950 p-6 rounded-lg shadow-sm flex items-center gap-4 transition-transform hover:-translate-y-1 border border-slate-250 dark:border-slate-800">
+            <div className="p-4 bg-purple-100 dark:bg-purple-900/30 text-purple-650 rounded-full shrink-0">
+              <Lock size={28} className="text-purple-600" />
+            </div>
+            <div className="flex flex-col">
+              <h3 className="font-extrabold text-sm text-slate-800 dark:text-white">ERP Portal</h3>
+              <p className="text-xs text-slate-500 mt-1 mb-2">Access the secure school management system.</p>
+              <Link href="/login" className="text-xs font-bold text-[var(--primary-color)] dark:text-blue-400 hover:underline flex items-center gap-1">
+                Sign In to Portal <ArrowRight size={12} />
+              </Link>
             </div>
           </div>
         </div>
